@@ -2,45 +2,33 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1d4ed8">
 <meta name="description" content="装备数据分析系统 · 设备故障分析 / 五金配件防呆 / 设备核心件预保养">
 <title>装备数据分析系统</title>
 <link rel="icon" type="image/png" href="./icon.png">
+<!-- 无 JS 时的兜底跳转 -->
+<meta http-equiv="refresh" content="0;url=https://2119779693255380992.app.workbuddy.host/?sharecode=NCYAMJXSCH">
 <style>
-  html,body{margin:0;height:100%;overflow:hidden;background:#f4f6fa}
-  #app{display:block;width:100%;height:100%;border:0}
-  #loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
-           background:#f4f6fa;z-index:2;transition:opacity .35s ease;
+  html,body{margin:0;height:100%;background:#f4f6fa;
            font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif;color:#64748b}
-  #loading.hide{opacity:0;pointer-events:none}
-  #loading .box{text-align:center}
-  #loading img{width:52px;height:52px;border-radius:12px;box-shadow:0 4px 14px rgba(8,20,50,.18);margin-bottom:14px}
-  #tip{position:fixed;right:12px;bottom:10px;z-index:3;font:12px system-ui,"Microsoft YaHei",sans-serif;
-       color:#94a3b8;background:rgba(255,255,255,.86);border:1px solid #e2e8f0;border-radius:6px;
-       padding:4px 9px;opacity:.55;transition:opacity .2s;text-decoration:none}
-  #tip:hover{opacity:1;color:#1d4ed8}
+  .box{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+  .box img{width:52px;height:52px;border-radius:12px;box-shadow:0 4px 14px rgba(8,20,50,.18)}
+  .box a{color:#1d4ed8}
 </style>
 </head>
 <body>
-<div id="loading"><div class="box"><img src="./icon.png" alt=""><div>正在打开装备数据分析系统…</div></div></div>
-<iframe id="app" title="装备数据分析系统" allow="clipboard-read; clipboard-write; fullscreen"></iframe>
-<a id="tip" href="#" target="_blank" rel="noopener">打不开？直接打开</a>
+<div class="box">
+  <img src="./icon.png" alt="">
+  <div>正在打开装备数据分析系统…</div>
+  <a href="https://2119779693255380992.app.workbuddy.host/?sharecode=NCYAMJXSCH">没反应？点此打开</a>
+</div>
 <script>
 (function () {
-  // 数据源仍是 WorkBuddy 共享库；本页只做自有域名外壳，数据链路原样保留。
-  // 云端接口有 Origin 白名单，静态搬站会 403，因此必须保持 iframe 内为原域名同源。
-  var BASE = 'https://2119779693255380992.app.workbuddy.host/';
-  var DEFAULT_SHARECODE = 'NCYAMJXSCH';
+  // 顶层导航（不是第三方 iframe），会话 Cookie 正常写入，样式与脚本不会 403。
   var q = new URLSearchParams(location.search);
-  if (!q.has('sharecode')) q.set('sharecode', DEFAULT_SHARECODE);
-  var target = BASE + '?' + q.toString();
-  var frame = document.getElementById('app');
-  var loading = document.getElementById('loading');
-  frame.addEventListener('load', function () { loading.classList.add('hide'); });
-  frame.src = target;
-  document.getElementById('tip').href = target;
-  setTimeout(function () { loading.classList.add('hide'); }, 12000);
+  if (!q.has('sharecode')) q.set('sharecode', 'NCYAMJXSCH');
+  location.replace('https://2119779693255380992.app.workbuddy.host/?' + q.toString());
 })();
 </script>
 </body>
