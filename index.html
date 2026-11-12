@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CQ0523 · 我的专属主页</title>
+<meta name="description" content="CQ0523 的个人主页" />
+<!-- 把下面这行换成你自己的域名后，浏览器标签图标就会显示 -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='32' y='42' font-size='30' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ECQ%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --text:#1f2430;
+    --muted:#6b7280;
+    --accent:#4f46e5;
+    --accent2:#06b6d4;
+    --shadow:0 10px 30px rgba(31,36,48,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.65;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:48px 20px;
+  }
+  .wrap{width:100%;max-width:720px}
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#fff;
+    border-radius:var(--radius);
+    padding:48px 36px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;
+    background:rgba(255,255,255,.12);border-radius:50%;
+  }
+  .avatar{
+    width:96px;height:96px;border-radius:50%;margin:0 auto 18px;
+    background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;
+    font-size:34px;font-weight:800;letter-spacing:1px;backdrop-filter:blur(4px);
+  }
+  .hero h1{font-size:34px;font-weight:800;letter-spacing:1px}
+  .hero .tag{margin-top:8px;font-size:16px;opacity:.92}
+  .hero .status{
+    display:inline-block;margin-top:18px;padding:6px 16px;border-radius:999px;
+    background:rgba(255,255,255,.18);font-size:13px;
+  }
+  /* Sections */
+  .card{
+    background:var(--card);border-radius:var(--radius);padding:28px 30px;margin-top:22px;
+    box-shadow:var(--shadow);
+  }
+  .card h2{font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .card h2 .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .card p{color:var(--muted);font-size:15px}
+  /* Links */
+  .links{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  .link{
+    display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;
+    background:#f3f4f8;text-decoration:none;color:var(--text);font-weight:600;font-size:15px;
+    transition:transform .15s ease,background .15s ease;
+  }
+  .link:hover{transform:translateY(-2px);background:#e9ebf5}
+  .link .ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex:0 0 auto}
+  .link small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+  /* Footer */
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:26px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media(max-width:520px){
+    .links{grid-template-columns:1fr}
+    .hero h1{font-size:28px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 顶部个人介绍（把下面的文字换成你自己的） ===== -->
+  <section class="hero">
+    <div class="avatar">CQ</div>
+    <h1>CQ0523</h1>
+    <p class="tag">你好，欢迎来到我的专属角落 ✦</p>
+    <span class="status">● 这里放一句你的签名 / 状态</span>
+  </section>
+
+  <!-- ===== 关于我 ===== -->
+  <section class="card">
+    <h2><span class="dot"></span>关于我</h2>
+    <p>这里写一段自我介绍——你是谁、在做什么、喜欢什么。比如：我是一名开发者 / 设计师 / 学生，平时喜欢折腾好玩的东西，欢迎通过这个页面找到我。</p>
+  </section>
+
+  <!-- ===== 联系方式 / 链接（把 href 换成你自己的地址） ===== -->
+  <section class="card">
+    <h2><span class="dot"></span>找到我</h2>
+    <div class="links">
+      <a class="link" href="https://github.com/" target="_blank" rel="noopener">
+        <span class="ico" style="background:#24292f">GH</span>
+        <span>GitHub<small>你的代码仓库</small></span>
+      </a>
+      <a class="link" href="mailto:you@example.com">
+        <span class="ico" style="background:#ea4335">@</span>
+        <span>邮箱<small>you@example.com</small></span>
+      </a>
+      <a class="link" href="https://twitter.com/" target="_blank" rel="noopener">
+        <span class="ico" style="background:#1da1f2">X</span>
+        <span>Twitter / X<small>你的动态</small></span>
+      </a>
+      <a class="link" href="https://blog.example.com" target="_blank" rel="noopener">
+        <span class="ico" style="background:#4f46e5">✎</span>
+        <span>博客<small>写下想法的地方</small></span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> CQ0523 · 由本人亲手搭建
+  </footer>
+
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
